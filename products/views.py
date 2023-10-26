@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+from products.models import Product, ProductCategory
 
 def index (request):
     context = {
@@ -11,32 +11,7 @@ def index (request):
 def products (request):
     context = {
         'title': 'Store - Каталог',
-        'products': [
-            {
-                'image': '/static/vendor/img/products/Adidas-hoodie.png',
-                'name': 'Худи черного цвета с монограммами adidas Originals',
-                'price': 6090,
-                'descritpion': 'Мягкая ткань для свитшотов. Стиль и комфорт – это образ жизни.',
-            },
-            {
-                'image': '/static/vendor/img/products/Adidas-hoodie.png',
-                'name': 'Худи черного цвета с монограммами adidas Originals',
-                'price': 6090,
-                'descritpion': 'Мягкая ткань для свитшотов. Стиль и комфорт – это образ жизни.',
-            },
-            {
-                'image': '/static/vendor/img/products/Adidas-hoodie.png',
-                'name': 'Худи черного цвета с монограммами adidas Originals',
-                'price': 6090,
-                'descritpion': 'Мягкая ткань для свитшотов. Стиль и комфорт – это образ жизни.',
-            },
-            {
-                'image': '/static/vendor/img/products/Adidas-hoodie.png',
-                'name': 'Худи черного цвета с монограммами adidas Originals',
-                'price': 6090,
-                'descritpion': 'Мягкая ткань для свитшотов. Стиль и комфорт – это образ жизни.',
-            }
-            
-        ]
+        'products': Product.objects.all(),
+        'categories': ProductCategory.objects.all(),
     }
     return render(request, 'products/products.html', context)
