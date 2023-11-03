@@ -1,0 +1,28 @@
+{
+    // путь к вашему виртуальному окружению
+    // на Windows «bin» нужно заменить на «Scripts», «python» на «python.exe»
+    // вместо «/» использовать «//», либо «\»
+    "python.pythonPath": "<путь к вашему виртуальному окружению>/bin/python",
+    "python.testing.pytestArgs": [],
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": false,
+    // путь к месту установки flake8, если он не установлен внутри вирт. окружения проекта
+    "cornflakes.linter.executablePath": "<путь к вашему flake8>",
+    "cornflakes.linter.run": "onType",
+    "files.insertFinalNewline": true,
+    "editor.rulers": [
+        80,
+    ],
+    "workbench.editor.enablePreview": false,
+    "editor.minimap.enabled": false,
+    "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    },
+    "json.schemas": []
+}
